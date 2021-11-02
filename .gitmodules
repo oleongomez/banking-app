@@ -1,0 +1,6 @@
+[submodule "bad_bank"]
+	path = bad_bank
+	url = https://github.com/oleongomez/bad_bank
+[submodule "bad_bank_backend"]
+	path = bad_bank_backend
+	url = https://github.com/oleongomez/bad_bank_backend
