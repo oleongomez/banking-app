@@ -2,7 +2,7 @@ version: "3"
 
 services:
   api:
-    build: bad_bank_backend/
+    build: ./bad_bank_backend
     links:
       - db
     depends_on:
