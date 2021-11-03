@@ -15,6 +15,13 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  # Use docker.io for Docker Hub if empty
+  REGISTRY: ghcr.io
+  # github.repository as <account>/<repo>
+  IMAGE_NAME: ${{ github.repository }}
+
+
 jobs:
   docker:
     timeout-minutes: 10
@@ -26,7 +33,6 @@ jobs:
 
     - name: Start containers
       run: docker-compose -f "docker-compose.yml" up -d --build
-
   build:
 
     runs-on: ubuntu-latest
