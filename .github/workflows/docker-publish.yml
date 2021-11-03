@@ -34,10 +34,22 @@ jobs:
       run: git submodule init bad_bank/; git submodule init bad_bank_backend/
     
     - name: Update submodules
-      run: git submodule update --recusive bad_bank/; git submodule update --recursive bad_bank_backend/
+      run: git submodule update --recusive bad_bank
+    - name : A
+      run: git submodule update --recursive bad_bank_backend/
     
     - name: change to main submodules
-      run: cd bad_bank/; git switch main; cd ..; cd bad_bank_backend/; git switch main; cd ..
+      run: cd bad_bank/
+    - name: AA
+      run: git switch main
+    - name: BB
+      run: cd ..
+    - name: CC
+      run: cd bad_bank_backend/
+    - name: DD
+      run: git switch main
+    - name: EE
+      run: cd ..
       
     - name: look for dockerfiles
       run: find . -name Docker*
