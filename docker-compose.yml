@@ -1,0 +1,41 @@
+version: "3"
+
+services:
+  api:
+    build: ./bad_bank_backend
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - "3001:3001"
+    networks:
+      - network-backend
+      - network-frontend
+
+  webapp:
+    build: ./bad_bank
+    environment:
+    - API_URL=http://api:3001
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    networks:
+      - network-frontend
+
+  db:
+    container_name: mongodb
+    image: 'mongo'
+    volumes:
+      - ~/mongodb:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      - network-backend
+
+
+networks:
+  network-backend:
+    driver: bridge
+  network-frontend:
