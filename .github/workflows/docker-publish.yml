@@ -30,12 +30,11 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
-    - name: init submodules
-      run: git submodule init bad_bank/; git submodule init bad_bank_backend/
-    
+       
     - name: Update submodules
       run: git submodule foreach --recursive git submodule update --init
-    
+    - name: init submodules
+      run: git pull --recurse-submodules
     - name: change to main submodules
       run: cd bad_bank/
     - name: AA
