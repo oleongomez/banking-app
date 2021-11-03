@@ -38,7 +38,7 @@ jobs:
     - name: change to main submodules
       run: cd bad_bank/
     - name: AA
-      run: git switch main
+      run: ls; pwd
     - name: AAA
       run: git log
     - name: BB
