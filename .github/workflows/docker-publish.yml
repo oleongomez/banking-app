@@ -39,6 +39,8 @@ jobs:
       run: cd bad_bank/
     - name: AA
       run: git switch main
+    - name: AAA
+      run: git log
     - name: BB
       run: cd ..
     - name: CC
